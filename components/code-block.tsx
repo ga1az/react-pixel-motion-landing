@@ -30,7 +30,7 @@ interface CodeBlockProps {
   className?: string;
 }
 
-const darkTheme = {
+export const darkTheme = {
   ...nightOwl,
   'pre[class*="language-"]': {
     ...nightOwl['pre[class*="language-"]'],

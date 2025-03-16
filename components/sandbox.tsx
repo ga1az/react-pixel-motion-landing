@@ -2,6 +2,7 @@
 
 import guardbot from "@/public/guardbot1.svg";
 import { useRef, useState, useEffect } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { Label } from "./ui/label";
 import { Slider } from "./ui/slider";
 import {
@@ -20,6 +21,7 @@ import {
   type PixelMotionProps,
   type GridOptions,
 } from "@ga1az/react-pixel-motion";
+import { darkTheme } from "./code-block";
 
 export default function SandBox() {
   const [sandboxConfig, setSandboxConfig] = useState<PixelMotionProps>({
@@ -571,10 +573,10 @@ export default function SandBox() {
       </div>
       <Tabs defaultValue="preview" className="w-full lg:w-1/2">
         <TabsList className="w-full mb-4 z-10">
-          <TabsTrigger value="preview" className="flex-1 z-10">
+          <TabsTrigger value="preview" className="flex-1 z-10 text-lg">
             Preview
           </TabsTrigger>
-          <TabsTrigger value="code" className="flex-1 z-10">
+          <TabsTrigger value="code" className="flex-1 z-10 text-lg">
             Code
           </TabsTrigger>
         </TabsList>
@@ -588,7 +590,19 @@ export default function SandBox() {
         <TabsContent value="code" className="mt-0">
           <div className="relative">
             <pre className="bg-muted/10 p-4 rounded-lg overflow-x-auto text-sm font-mono min-h-[250px] border">
-              <code>{generateCodeString()}</code>
+              <SyntaxHighlighter
+                language="tsx"
+                style={darkTheme}
+                customStyle={{
+                  margin: 0,
+                  padding: "1rem",
+                  background: "transparent",
+                  fontSize: "0.9rem",
+                  fontWeight: "bold",
+                }}
+              >
+                {generateCodeString()}
+              </SyntaxHighlighter>
             </pre>
             <Button
               variant="secondary"
