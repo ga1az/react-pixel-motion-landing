@@ -67,8 +67,7 @@ export default function SandBox() {
     };
   }, []);
 
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  const updateSandboxParam = (param: string, value: any) => {
+  const updateSandboxParam = (param: string, value: unknown) => {
     setSandboxConfig((prev) => ({
       ...prev,
       [param]: value,
@@ -376,6 +375,7 @@ export default function SandBox() {
                         } else {
                           setSandboxConfig((prev) => {
                             if (prev.direction === "grid" && prev.gridOptions) {
+                              // eslint-disable-next-line @typescript-eslint/no-unused-vars
                               const { rowIndex, ...rest } = prev.gridOptions;
                               return {
                                 ...prev,
@@ -425,6 +425,7 @@ export default function SandBox() {
                         } else {
                           setSandboxConfig((prev) => {
                             if (prev.direction === "grid" && prev.gridOptions) {
+                              // eslint-disable-next-line @typescript-eslint/no-unused-vars
                               const { columnIndex, ...rest } = prev.gridOptions;
                               return {
                                 ...prev,

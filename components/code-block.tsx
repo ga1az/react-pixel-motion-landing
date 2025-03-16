@@ -30,46 +30,6 @@ interface CodeBlockProps {
   className?: string;
 }
 
-const lightTheme = {
-  ...nightOwl,
-  'pre[class*="language-"]': {
-    ...nightOwl['pre[class*="language-"]'],
-    background: "transparent",
-  },
-  'code[class*="language-"]': {
-    ...nightOwl['code[class*="language-"]'],
-    color: "hsl(var(--foreground))",
-  },
-  comment: {
-    color: "hsl(var(--muted-foreground))",
-    fontStyle: "italic",
-  },
-  punctuation: {
-    color: "hsl(var(--foreground))",
-  },
-  property: {
-    color: "#0550FF",
-  },
-  string: {
-    color: "#14532D",
-  },
-  keyword: {
-    color: "#9333EA",
-  },
-  function: {
-    color: "#E45C3A",
-  },
-  boolean: {
-    color: "#9333EA",
-  },
-  number: {
-    color: "#9333EA",
-  },
-  operator: {
-    color: "hsl(var(--foreground))",
-  },
-};
-
 const darkTheme = {
   ...nightOwl,
   'pre[class*="language-"]': {
