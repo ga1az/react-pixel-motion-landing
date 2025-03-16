@@ -3,7 +3,9 @@ import NpmVersion from "@/components/npm-version";
 import SandBox from "@/components/sandbox";
 import { Badge } from "@/components/ui/badge";
 import PixelTrail from "@/fancy/components/background/pixel-trail";
+import { PackageSearch } from "lucide-react";
 import { Pixelify_Sans } from "next/font/google";
+import Link from "next/link";
 
 const pixelifySans = Pixelify_Sans({
   weight: "400",
@@ -35,6 +37,14 @@ export default function Home() {
             <p className="text-sm md:text-2xl text-muted-foreground">
               A React component for animating sprites with pixelated motion
             </p>
+            <Link
+              href="https://www.npmjs.com/package/@ga1az/react-pixel-motion"
+              target="_blank"
+              className="text-sm md:text-2xl text-muted-foreground underline cursor-pointer z-10 relative flex items-center gap-2"
+            >
+              <PackageSearch className="w-4 h-4" />
+              docs
+            </Link>
           </div>
         </div>
         <div className="flex flex-col z-10 w-full">
