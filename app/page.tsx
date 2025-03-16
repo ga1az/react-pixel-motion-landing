@@ -1,4 +1,5 @@
 import InstallSnippet from "@/components/install-snippet";
+import NpmVersion from "@/components/npm-version";
 import SandBox from "@/components/sandbox";
 import { Badge } from "@/components/ui/badge";
 import PixelTrail from "@/fancy/components/background/pixel-trail";
@@ -26,7 +27,7 @@ export default function Home() {
           <Badge variant="outline" className="bg-green-800/50">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-              <p className="text-xs font-mono">v0.0.15 Released</p>
+              <NpmVersion />
             </div>
           </Badge>
           <div className="mt-5">

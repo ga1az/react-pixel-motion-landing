@@ -9,7 +9,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@ga1az/react-pixel-motion": "^0.0.15",
+		"@ga1az/react-pixel-motion": "^0.0.16",
 		"@radix-ui/react-label": "^2.1.2",
 		"@radix-ui/react-slider": "^1.2.3",
 		"@radix-ui/react-slot": "^1.1.2",
