@@ -571,7 +571,7 @@ export default function SandBox() {
           </div>
         </div>
       </div>
-      <Tabs defaultValue="preview" className="w-full lg:w-1/2">
+      <Tabs defaultValue="preview" className="w-full lg:w-1/2 mb-10 lg:mb-0">
         <TabsList className="w-full mb-4 z-10">
           <TabsTrigger value="preview" className="flex-1 z-10 text-lg">
             Preview

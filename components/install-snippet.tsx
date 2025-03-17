@@ -47,7 +47,11 @@ const InstallSnippet = () => {
           <SnippetCopyButton value={activeCommand?.code ?? ""} />
         </SnippetHeader>
         {commands.map((command) => (
-          <SnippetTabsContent key={command.label} value={command.label}>
+          <SnippetTabsContent
+            key={command.label}
+            value={command.label}
+            className="overflow-x-auto"
+          >
             {command.code}
           </SnippetTabsContent>
         ))}
