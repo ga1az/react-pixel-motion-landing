@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  openGraph: {
+    title: "React Pixel Motion",
+    description: "A library for creating pixel animations with React",
+    url: "https://react-pixel-motion.vercel.app",
+    siteName: "React Pixel Motion",
+    images: ["/image.png"],
+  },
 };
 
 export default function RootLayout({
