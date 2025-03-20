@@ -10,7 +10,6 @@ export default function NpmVersion() {
   useEffect(() => {
     setLoading(true);
     fetch("https://registry.npmjs.org/@ga1az/react-pixel-motion", {
-      cache: "force-cache",
       next: {
         revalidate: 60 * 60 * 1, // 1 hour
       },
