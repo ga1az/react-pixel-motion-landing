@@ -1,0 +1,88 @@
+---
+title: Getting Started
+description: A Minimalist React library for pixel art sprite animations with a focus on simplicity and ease of use.
+icon: Album
+---
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import SimpleAnimation from '@/components/simple-animation';
+
+## Introduction
+
+React Pixel Motion is a lightweight, easy-to-use library that enables sprite animations in your React applications. It's ideal for games, interactive interfaces, or any project requiring pixel art style animations.
+[www.npmjs.com/package/@ga1az/react-pixel-motion](https://www.npmjs.com/package/@ga1az/react-pixel-motion)
+
+### Key Features
+
+- 🚀 **Optimized Performance** - Smooth animations with minimal performance impact
+- 🎮 **Pixel Art Ready** - Perfect for retro or pixel art style sprites
+- 🔄 **Full Control** - Control speed, scale, direction, callback on animation end, start, and more
+- 🧩 **Easy Integration** - Seamlessly integrates into any React project
+- 📱 **Responsive** - Works across all devices and screen sizes
+- 👾 **Image support** - Supports SVG, PNG, JPG and Sprite sheets.
+
+
+## Installation
+
+<Tabs items={['bun', 'npm', 'yarn', 'pnpm']}>
+  <Tab value="bun">
+    ```bash
+    bun add @ga1az/react-pixel-motion
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npm install @ga1az/react-pixel-motion
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn add @ga1az/react-pixel-motion
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm add @ga1az/react-pixel-motion
+    ```
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { PixelMotion } from "@ga1az/react-pixel-motion";
+import characterSprite from './assets/character.svg'; // or any other image format
+
+function App() {
+  return (
+    <PixelMotion
+      sprite={characterSprite}
+      width={24} // Width of each frame in pixels (required)
+      height={31} // Height of each frame in pixels (required)
+      frameCount={3} // Total number of frames in the sprite sheet (optional)
+      fps={10} // Frames per second for the animation (optional)
+      scale={5} // Scale factor for the sprite (optional)
+      startFrame={0} // Initial frame to start the animation (optional)
+      loop={true} // Whether the animation should loop (optional)
+      shouldAnimate={true} // Whether the animation should play (optional)
+      direction="horizontal" // Direction of the sprite sheet (optional)
+      onAnimationEnd={() => console.log('Animation ended')} // Callback when animation ends (optional)
+      onAnimationStart={() => console.log('Animation started')} // Callback when animation starts (optional)
+    />
+  );
+}
+```
+### Example
+<div className="flex justify-center items-center border-2 border-[#323333] bg-[#151515] rounded-md p-4">
+  <SimpleAnimation />
+</div>
+
+
+### Learn More
+
+<Cards>
+  <Card
+    href="/docs/overview"
+    title="Overview"
+    description="Animations examples"
+  />
+</Cards>

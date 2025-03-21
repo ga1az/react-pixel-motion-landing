@@ -1,0 +1,49 @@
+---
+title: Overview
+description: Basic examples of animations
+icon: Building2
+---
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import SoldierAttack from "@/components/soldier-attack";
+
+## Basic Animations
+
+### Atack Animation
+
+<Tabs items={['code', 'preview']}>
+  <Tab value="code">
+    ```tsx
+    import soldier from "./assets/soldier.webp";
+
+    <PixelMotion
+      sprite={superWarrior}
+      width={30}
+      height={31}
+      startFrame={0}
+      frameCount={15}
+      fps={35}
+      shouldAnimate={isPlaying}
+      loop={false}
+      scale={10}
+      onAnimationEnd={() => {
+        setIsPlaying(false);
+      }}
+    />
+
+    <button
+      type="button"
+      onClick={() => setIsPlaying(true)}
+      disabled={isPlaying}
+    >
+      {isPlaying ? "Attacking..." : "Attack!"}
+    </button>
+    ```
+  </Tab>
+  <Tab value="preview">
+    <SoldierAttack />
+  </Tab>
+</Tabs>
+
+
+### In Construction 🏗️
+

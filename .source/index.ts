@@ -1,0 +1,6 @@
+// @ts-nocheck -- skip type checking
+import * as docs_1 from "../content/docs/overview.mdx?collection=docs&hash=1742509570999"
+import * as docs_0 from "../content/docs/index.mdx?collection=docs&hash=1742509570999"
+import { _runtime } from "fumadocs-mdx"
+import * as _source from "../source.config"
+export const docs = _runtime.docs<typeof _source.docs>([{ info: {"path":"index.mdx","absolutePath":"/Users/ga1az/Documents/code/front/react/react-pixel-motion-landing/content/docs/index.mdx"}, data: docs_0 }, { info: {"path":"overview.mdx","absolutePath":"/Users/ga1az/Documents/code/front/react/react-pixel-motion-landing/content/docs/overview.mdx"}, data: docs_1 }], [{ info: {"path":"meta.json","absolutePath":"/Users/ga1az/Documents/code/front/react/react-pixel-motion-landing/content/docs/meta.json"}, data: {"title":"React Pixel Motion","pages":["---Introduction---","index","overview"],"description":"A Minimalist React library for pixel art sprite animations with a focus on simplicity and ease of use.","root":true,"icon":"Building2"} }])

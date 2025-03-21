@@ -24,7 +24,9 @@ import {
 import { darkTheme } from "./code-block";
 
 export default function SandBox() {
-  const [sandboxConfig, setSandboxConfig] = useState<PixelMotionProps>({
+  const [sandboxConfig, setSandboxConfig] = useState<
+    PixelMotionProps & { originalFileName?: string }
+  >({
     height: 32,
     width: 30,
     fps: 8,
@@ -126,6 +128,7 @@ export default function SandBox() {
       const url = URL.createObjectURL(file);
       setUploadedSprite(url);
       updateSandboxParam("sprite", url);
+      updateSandboxParam("originalFileName", file.name);
     }
   };
 
@@ -144,8 +147,30 @@ export default function SandBox() {
   frameCount={${sandboxConfig.frameCount}}
   startFrame={${sandboxConfig.startFrame}}
   scale={${sandboxConfig.scale}}
-  shouldAnimate={${sandboxConfig.shouldAnimate}}
-  sprite="${sandboxConfig.sprite}"`;
+  shouldAnimate={${sandboxConfig.shouldAnimate}}`;
+
+    if (typeof sandboxConfig.sprite === "string") {
+      if (
+        "originalFileName" in sandboxConfig &&
+        sandboxConfig.originalFileName
+      ) {
+        codeString += `\n  sprite="${sandboxConfig.originalFileName}"`;
+      } else {
+        const isBlob = sandboxConfig.sprite.startsWith("blob:");
+        if (isBlob) {
+          codeString += `\n  sprite="[Uploaded file]"`;
+        } else {
+          codeString += `\n  sprite="${sandboxConfig.sprite}"`;
+        }
+      }
+    } else if (sandboxConfig.sprite instanceof Object) {
+      const filename = sandboxConfig.sprite.src
+        .toString()
+        .replace(/.*\/([^/]+)$/, "$1");
+      codeString += `\n  sprite={"${filename}"}`;
+    } else {
+      codeString += `\n  sprite="/guardbot1.svg"`;
+    }
 
     if (sandboxConfig.direction !== "horizontal") {
       codeString += `\n  direction="${sandboxConfig.direction}"`;
@@ -550,6 +575,7 @@ export default function SandBox() {
                   updateSandboxParam("height", 32);
                   updateSandboxParam("width", 30);
                   updateSandboxParam("fps", 8);
+                  updateSandboxParam("originalFileName", undefined);
                   updateSandboxParam("frameCount", 3);
                   updateSandboxParam("startFrame", 0);
                   updateSandboxParam("scale", 3);

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
+import { RootProvider } from "fumadocs-ui/provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,15 +18,23 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "React Pixel Motion",
   description: "A library for creating pixel animations with React",
+  metadataBase: new URL("https://react-pixel-motion.ga1az.com/"),
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
     title: "React Pixel Motion",
     description: "A library for creating pixel animations with React",
-    url: "https://react-pixel-motion.vercel.app",
+    url: "https://react-pixel-motion.ga1az.com/",
     siteName: "React Pixel Motion",
-    images: ["/image.png"],
+    images: [
+      {
+        url: "/image.png",
+        width: 1696,
+        height: 611,
+        alt: "React Pixel Motion",
+      },
+    ],
   },
 };
 
@@ -45,7 +54,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <RootProvider>{children}</RootProvider>
           <Analytics />
         </ThemeProvider>
       </body>
