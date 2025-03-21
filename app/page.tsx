@@ -3,7 +3,7 @@ import NpmVersion from "@/components/npm-version";
 import SandBox from "@/components/sandbox";
 import { Badge } from "@/components/ui/badge";
 import PixelTrail from "@/fancy/components/background/pixel-trail";
-import { BookOpen, PackageSearch } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { Pixelify_Sans } from "next/font/google";
 import Link from "next/link";
 
